@@ -54,7 +54,7 @@ tiny.Register<Func<ISimple>>(factory => factory.Resolve<Simple>);
 
 var instance = tiny.Resolve<Func<Simple>>()();
 ```
-## Tiny Modules
+## Modules
 ```c#
 public class MyModule : ITinyModule
 {

@@ -1,13 +1,6 @@
 # TinyIoC
 TinyIoC is a tiny inversion-of-control container. The library only contains 3 exported types.
 The small surface area of this API allows your project to have a consistent and predictable dependency injection experience.
-
-Here's all you really need to know:
-- All registrations are transient-scoped.
-- Registrations are explicit (no auto-binding).
-- Double registration throws an exception.
-
-That's it! Have fun!
 ```c#
 public interface ITinyRegistry
 {
@@ -25,6 +18,12 @@ public class TinyContainer : ITinyRegistry, ITinyResolver
 {
 	...
 ```
+Here's all you really need to know:
+- All registrations are transient-scoped.
+- Registrations are explicit (no auto-binding).
+- Double registration throws an exception.
+
+That's it! Have fun!
 # Examples
 ```c#
 public interface ISimple { }

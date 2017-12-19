@@ -23,13 +23,13 @@ Here's all you really need to know:
 - Re-registration of the same type throws an exception.
 
 That's it! Have fun!
-# Examples
+## Examples
 ```c#
 public interface ISimple { }
 
 public class Simple : ISimple { }
 ```
-## Basic Usage
+### Basic Usage
 ```c#
 var tiny = new TinyContainer();
 
@@ -39,7 +39,7 @@ var instance = tiny.Resolve<Simple>();
 tiny.Register<ISimple, Simple>();
 var instance = tiny.Resolve<ISimple>();
 ```
-## Registration With Factories
+### Registration with Factories
 ```c#
 tiny.Register(factory => new Simple());
 var instance = tiny.Resolve<Simple>();
@@ -47,14 +47,14 @@ var instance = tiny.Resolve<Simple>();
 tiny.Register<ISimple>(factory => factory.Resolve<Simple>());
 var instance = tiny.Resolve<ISimple>();
 ```
-## Delegate Registration
+### Delegate Registration
 ```c#
 tiny.Register<Func<Simple>>(factory => () => new Simple());
 tiny.Register<Func<ISimple>>(factory => factory.Resolve<Simple>);
 
 var instance = tiny.Resolve<Func<Simple>>()();
 ```
-## Modules
+### Modules
 ```c#
 public class MyModule : ITinyModule
 {

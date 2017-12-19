@@ -1,7 +1,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TinyIoc
+namespace TinyIoc.Tests
 {
     [TestClass]
     public class RegisterAndResolveTests

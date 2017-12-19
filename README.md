@@ -15,13 +15,17 @@ var instance = tiny.Resolve<Simple>();
 tiny.Register<ISimple, Simple>();
 var instance = tiny.Resolve<ISimple>();
 ```
-Factories
+Registration With Factories
 ```c#
 tiny.Register(factory => new Simple());
 tiny.Register<ISimple>(factory => factory.Resolve<Simple>());
+
+var instance = tiny.Resolve<ISimple>();
 ```
-Delegates
+Delegate Registration
 ```c#
 tiny.Register<Func<Simple>>(factory => () => new Simple());
 tiny.Register<Func<ISimple>>(factory => factory.Resolve<Simple>);
+
+var instance = tiny.Resolve<Func<Simple>>()();
 ```

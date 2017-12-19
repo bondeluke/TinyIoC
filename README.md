@@ -1,5 +1,24 @@
 # TinyIoC
-A tiny inversion-of-control container
+TinyIoC is a tiny inversion-of-control container. The library only contains 3 exported types.
+The small surface area of this API allows your project to follow a consistent and predictable dependency injection experience.
+```c#
+public interface ITinyRegistry
+{
+    ITinyRegistry Register<T>();
+    ITinyRegistry Register<TService, TImplementation>() where TImplementation : TService;
+    ITinyRegistry Register<T>(Func<ITinyResolver, T> factory);
+}
+
+public interface ITinyResolver
+{
+    T Resolve<T>();
+}
+
+public class TinyContainer : ITinyRegistry, ITinyResolver
+{
+	...
+```
+# Examples
 ```c#
 public interface ISimple { }
 

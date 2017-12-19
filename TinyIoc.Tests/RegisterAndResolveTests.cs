@@ -69,19 +69,19 @@ namespace TinyIoc.Tests
 
             tiny.Register<Simple>();
 
-            Assert.ThrowsException<TinyMistake>(() => tiny.Register<Simple>());
-            Assert.ThrowsException<TinyMistake>(() => tiny.Register(factory => new Simple()));
+            Assert.ThrowsException<TinyError>(() => tiny.Register<Simple>());
+            Assert.ThrowsException<TinyError>(() => tiny.Register(factory => new Simple()));
         }
+    }
 
-        public interface ISimple { }
+    public interface ISimple { }
 
-        public class Simple : ISimple { }
+    public class Simple : ISimple { }
 
-        public interface IComplex { }
+    public interface IComplex { }
 
-        public class Complex : IComplex
-        {
-            public Complex(Simple simple, ISimple iSimple, Func<Simple> complexClassFactory) { }
-        }
+    public class Complex : IComplex
+    {
+        public Complex(Simple simple, ISimple iSimple, Func<Simple> complexClassFactory) { }
     }
 }

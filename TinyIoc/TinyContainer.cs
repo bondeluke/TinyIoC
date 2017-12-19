@@ -66,7 +66,7 @@ namespace TinyIoc
 
                 if (ctrs.Length > 1)
                 {
-                    throw new TinyMistake("Too many constructors.");
+                    throw new TinyError("Too many constructors.");
                 }
 
                 var instances = ctrs[0]
@@ -82,20 +82,15 @@ namespace TinyIoc
                 return _instanceFactory[t](this);
             }
 
-            throw new TinyMistake($"Oh no. You didn't register {t.FullName}.");
+            throw new TinyError($"Oh no. You didn't register {t.FullName}.");
         }
 
         private void ThrowIfContains(Type t)
         {
             if (_bindings.ContainsKey(t) || _instanceFactory.ContainsKey(t))
             {
-                throw new TinyMistake($"You already registered {t.Name}.");   
+                throw new TinyError($"You already registered {t.Name}.");   
             }
         }
-    }
-
-    public class TinyMistake : Exception
-    {
-        public TinyMistake(string message) : base(message) { }
     }
 }

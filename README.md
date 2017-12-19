@@ -1,7 +1,7 @@
 # TinyIoC
 TinyIoC is a tiny inversion-of-control container.
-This fail-fast, to-the-point, no-fuss API will keep you from shooting yourself in the foot.
-The TinyContainer implements two straightforward interfaces.
+This fail-fast, to-the-point, no-fuss API keeps your DI consistent and predictable.
+The main class `TinyContainer` implements two straightforward interfaces, `ITinyRegistry` and `ITinyResolver`.
 ```c#
 public interface ITinyRegistry
 {

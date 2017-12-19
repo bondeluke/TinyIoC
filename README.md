@@ -54,3 +54,23 @@ tiny.Register<Func<ISimple>>(factory => factory.Resolve<Simple>);
 
 var instance = tiny.Resolve<Func<Simple>>()();
 ```
+Tiny modules
+```c#
+public class MyModule : ITinyModule
+{
+    public void RegisterServices(ITinyRegistry registry)
+    {
+        registry.Register<Simple>();
+    }
+}
+```
+```c#
+new MyModule().RegisterServices(container);
+// or
+container.RegisterModule(new MyModule());
+// or
+container.RegisterModule<MyOtherModule>();
+
+Assert.IsNotNull(container.Resolve<Simple>());
+Assert.IsNotNull(container.Resolve<ISimple>());
+```

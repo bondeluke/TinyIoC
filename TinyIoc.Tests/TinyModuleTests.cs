@@ -26,9 +26,7 @@ namespace TinyIoc.Tests
         {
             var container = new TinyContainer();
 
-            var myModule = new MyModule();
-
-            myModule.RegisterServices(container);
+            new MyModule().RegisterServices(container);
 
             Assert.IsNotNull(container.Resolve<Simple>());
         }
@@ -38,7 +36,10 @@ namespace TinyIoc.Tests
         {
             var container = new TinyContainer();
 
+            new MyModule().RegisterServices(container);
+            // or
             container.RegisterModule(new MyModule());
+            // or
             container.RegisterModule<MyOtherModule>();
 
             Assert.IsNotNull(container.Resolve<Simple>());

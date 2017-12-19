@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyIoc", "TinyIoc\TinyIoc.csproj", "{894844F2-658D-453F-886B-918F05886A49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyIoC", "TinyIoc\TinyIoC.csproj", "{894844F2-658D-453F-886B-918F05886A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyIoc.Tests", "TinyIoc.Tests\TinyIoc.Tests.csproj", "{8D76593A-FA24-41A6-A183-09388BA52486}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyIoC.Tests", "TinyIoc.Tests\TinyIoC.Tests.csproj", "{8D76593A-FA24-41A6-A183-09388BA52486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

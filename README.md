@@ -42,8 +42,9 @@ var instance = tiny.Resolve<ISimple>();
 ## Registration With Factories
 ```c#
 tiny.Register(factory => new Simple());
-tiny.Register<ISimple>(factory => factory.Resolve<Simple>());
+var instance = tiny.Resolve<Simple>();
 
+tiny.Register<ISimple>(factory => factory.Resolve<Simple>());
 var instance = tiny.Resolve<ISimple>();
 ```
 ## Delegate Registration

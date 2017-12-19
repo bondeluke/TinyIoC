@@ -30,7 +30,7 @@ public interface ISimple { }
 
 public class Simple : ISimple { }
 ```
-Basic Usage
+## Basic Usage
 ```c#
 var tiny = new TinyContainer();
 
@@ -40,21 +40,21 @@ var instance = tiny.Resolve<Simple>();
 tiny.Register<ISimple, Simple>();
 var instance = tiny.Resolve<ISimple>();
 ```
-Registration With Factories
+## Registration With Factories
 ```c#
 tiny.Register(factory => new Simple());
 tiny.Register<ISimple>(factory => factory.Resolve<Simple>());
 
 var instance = tiny.Resolve<ISimple>();
 ```
-Delegate Registration
+## Delegate Registration
 ```c#
 tiny.Register<Func<Simple>>(factory => () => new Simple());
 tiny.Register<Func<ISimple>>(factory => factory.Resolve<Simple>);
 
 var instance = tiny.Resolve<Func<Simple>>()();
 ```
-Tiny modules
+## Tiny modules
 ```c#
 public class MyModule : ITinyModule
 {
@@ -69,8 +69,7 @@ new MyModule().RegisterServices(container);
 // or
 container.RegisterModule(new MyModule());
 // or
-container.RegisterModule<MyOtherModule>();
+container.RegisterModule<MyModule>();
 
-Assert.IsNotNull(container.Resolve<Simple>());
-Assert.IsNotNull(container.Resolve<ISimple>());
+var instance = tiny.Resolve<Func<Simple>>()();
 ```

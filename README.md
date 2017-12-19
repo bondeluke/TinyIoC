@@ -19,7 +19,7 @@ public class TinyContainer : ITinyRegistry, ITinyResolver { ... }
 ```
 Here's all you really need to know:
 - All registrations are transient-scoped. Build your own caching layer!
-- Registrations are explicit (no auto-binding).
+- Registrations are explicit (no forgiveness or magic auto-binding).
 - Re-registration of the same type throws an exception.
 
 That's it! Have fun!

@@ -1,7 +1,7 @@
 # TinyIoC
 TinyIoC is a tiny inversion-of-control container.
 The small surface area of this API allows your project to have a consistent and predictable dependency injection experience.
-The TinyContainer implements to straightforward interface.
+The TinyContainer implements two straightforward interfaces.
 ```c#
 public interface ITinyRegistry
 {
